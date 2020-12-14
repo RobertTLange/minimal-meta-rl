@@ -1,0 +1,13 @@
+.DS_Store
+.ipynb_checkpoints/
+.sync-config.cson
+__pycache__/
+tboards/
+*.ckpth
+.pyc
+experiments/
+*.key
+*.pdf
+/docs
+OLD/
+*.pkl
