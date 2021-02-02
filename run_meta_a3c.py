@@ -108,12 +108,21 @@ def update_logger(global_net, train_log, episode_number, results_queue,
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-seed', '--seed_id',
+                        action="store", default=0,
+                        help='Seed ID for run.')
+    cmd_args = parser.parse_args()
+
     # Load and unpack training configs
     config_fname = "bernoulli_a2c.json"
     configs = load_config(config_fname)
     train_config, net_config, log_config = (configs.train_config,
                                             configs.net_config,
                                             configs.log_config)
+
+    # Set random seed for specific run
+    train_config.seed_id = int(cmd_args.seed_id)
 
     # Add individual filename of train config for logging
     log_config.config_fname = config_fname

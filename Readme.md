@@ -39,8 +39,11 @@ python run_meta_a3c.py
 jupyter notebook visualize_results.ipynb
 ```
 
-4. **Extra**: Running the training on the cluster. Log into the cluster and execute the qsub bash script:
+4. **Extra**: Running the training on the cluster. Log into the cluster and execute one of the qsub bash script:
 
 ```
-qsub cluster_train.sh
+qsub cluster_single_job.sh
+qsub cluster_batch_job.sh
 ```
+
+The later runs the same training procedure for 5 different random seeds.
