@@ -127,7 +127,7 @@ if __name__ == "__main__":
     # Add individual filename of train config for logging
     log_config.config_fname = config_fname
     log_config.experiment_dir = "experiments/"
-    log_config.fname_ext = ""
+    log_config.fname_ext = str(cmd_args.seed_id)
     log_config.tboard_fname = ""
 
     # Start the training run
